@@ -26,12 +26,12 @@ public class Bookmanager {
         book.setTitle(scanner.nextLine());
         System.out.println("Введите чисто авторов книги - ");
         int countAuthorsInBook = scanner.nextInt();
-        if (countAuthorsInBook <1){
-            System.out.println("net");
-        }
         scanner.nextLine();
-        book.setAuthor(createAuthors(countAuthorsInBook));
-        return book;
+        if (countAuthorsInBook <=0){
+            System.out.println("net");
+        } else
+            book.setAuthor(createAuthors(countAuthorsInBook));
+            return book;
     }
     private Author[] createAuthors(int countAuthorsInBook) {
         Author[] authors = new Author[countAuthorsInBook];
